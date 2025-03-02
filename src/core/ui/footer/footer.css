@@ -1,0 +1,8 @@
+.footer {
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #292929;
+  box-shadow: inset 0px 0px 23.9px #292929;
+  backdrop-filter: blur(6px);
+}

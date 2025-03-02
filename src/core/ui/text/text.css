@@ -1,0 +1,9 @@
+@font-face {
+  font-family: GraublauWeb;
+  src: url("fonts/new-science-regular-extended.otf") format("opentype");
+}
+@font-face {
+  font-family: GraublauWeb;
+  font-weight: bold;
+  src: url("fonts/new-science-regular-extended.otf") format("opentype");
+}
