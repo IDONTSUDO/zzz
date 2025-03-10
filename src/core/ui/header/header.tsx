@@ -6,9 +6,9 @@ export const Header = () => (
     className="header"
     style={{
       border: "1px solid #292929",
-      boxShadow: "inset 0px 0px 23.9px #292929;",
+      // boxShadow: "inset 0px 0px 23.9px #292929;",
       display: "flex",
-      filter: "saturate(2.2);",
+      // filter: "saturate(2.2);",
       position: "absolute",
       width: "100vw",
       backgroundColor: "rgba(0, 0, 0, 0.6)",

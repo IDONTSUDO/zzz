@@ -94,8 +94,8 @@ export const Logs = observer(() => {
       </div>
 
       <div style={{ position: "absolute", bottom: bottom, left: leftOffset }}>
-        {store.logs.map((el) => (
-          <div style={{ display: "flex" }}>
+        {store.logs.map((el, i) => (
+          <div key={i} style={{ display: "flex" }}>
             <div style={{ width: 4 }} />
             <CoreText text={el.yellowLog} color="#F8FF7C" fontSize={12} />
             <div style={{ width: 4 }} />

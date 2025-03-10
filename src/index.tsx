@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Logs } from "./core/ui/logs/logs";
@@ -8,14 +7,11 @@ import { Footer } from "./core/ui/footer/footer";
 import { observer } from "mobx-react-lite";
 import { Button } from "./core/ui/button/button";
 import { makeAutoObservable } from "mobx";
-import { Form } from "./core/ui/form/form";
+import { GenerationEventForm } from "./core/ui/form/generation_event_form";
 import { Icon } from "./core/ui/icon/icon";
 import { configure } from "mobx";
-
-
-
-
-
+import { AboutForm } from "./core/ui/form/about_form";
+import { BulletInForm } from "./core/ui/form/bulletin_form";
 
 configure({
   enforceActions: "never",
@@ -30,15 +26,24 @@ export class StorePage {
   bulletButtonIsActive = false;
   aboutButtonIsActive = false;
   generationButtonIsActive = false;
-
+  generationEventFormIsVisible = true;
+  bulletFormIsVisible = false;
+  aboutFormIsVisible = false;
   topLineTop?: number;
   generationEventBottomLineTop?: number;
+  arrowTop = 0;
+  arrowLeft = 0;
+  generationEventArrowTop = 0;
+  mutation = 0;
+  generationEventArrowLeft = 0;
   ggg = () => this.topLineTop ?? 0;
+  red: React.RefObject<HTMLDivElement | null> | undefined;
+  white: React.RefObject<HTMLDivElement | null> | undefined;
+  isReady = true;
   bulletButtonTop = () => (this?.mainRefHeight ?? 1) + 70;
   aboutButtonTop = () => this.bulletButtonTop() - 100;
   generationEventButtonTop = () => this.aboutButtonTop() - 100;
   generationEventButtonBegin = () => this.generationEventButtonTop() + 6;
-
   topButtonAccessibleDistance = () => this.generationEventButtonBegin() - 108;
   constructor() {
     makeAutoObservable(this);
@@ -48,25 +53,64 @@ export class StorePage {
       this.generationButtonIsActive = !this.generationButtonIsActive;
       this.aboutButtonIsActive = false;
       this.bulletButtonIsActive = false;
+      this.aboutFormIsVisible = false;
+      this.bulletFormIsVisible = false;
+      this.generationEventFormIsVisible = !this.generationEventFormIsVisible;
     }
     if (name === "aboutButtonIsActive") {
       this.aboutButtonIsActive = !this.aboutButtonIsActive;
       this.generationButtonIsActive = false;
       this.bulletButtonIsActive = false;
+      this.generationEventFormIsVisible = false;
+      this.bulletFormIsVisible = false;
+      this.aboutFormIsVisible = !this.aboutFormIsVisible;
     }
     if (name === "bulletButtonIsActive") {
       this.bulletButtonIsActive = !this.bulletButtonIsActive;
-      this.generationButtonIsActive = false;
       this.aboutButtonIsActive = false;
+      this.aboutFormIsVisible = false;
+      this.generationEventFormIsVisible = false;
+      this.bulletFormIsVisible = !this.bulletFormIsVisible;
     }
   };
+  generationEventFormInit(domRect: DOMRect) {
+    this.arrowLeft = domRect.right;
+  }
+
+  generationEventArrowRefInit(domRect: DOMRect) {
+    this.generationEventArrowTop = domRect.top;
+    this.generationEventArrowLeft = domRect.left;
+  }
+  closeForm(form: string) {}
+  generateWhittt() {
+    if (
+      document.getElementById("white") === null &&
+      document.getElementById("red") === null
+    ) {
+      return 0;
+    }
+    return (
+      // @ts-ignore
+      this.white?.current.getBoundingClientRect().left -
+      // @ts-ignore
+      this.red?.current.getBoundingClientRect().left
+    );
+  }
 }
+
+export const P = () => (
+  <>
+    <Page />
+  </>
+);
 export const Page = observer(() => {
   const [store] = useState(new StorePage());
   const mainLineRef = useRef<HTMLDivElement>(null);
   const topLineRef = useRef<HTMLDivElement>(null);
   const generationEventBottomLineRef = useRef<HTMLDivElement>(null);
-
+  const white = useRef<HTMLDivElement>(null);
+  const red = useRef<HTMLDivElement>(null);
+  const generationEventArrowRef = useRef<SVGPathElement>(null);
   useEffect(() => {
     store.mainRefHeight = ((mainLineRef.current?.clientHeight ?? 1) / 100) * 60;
     store.topLineTop =
@@ -74,21 +118,70 @@ export const Page = observer(() => {
     store.generationEventBottomLineTop =
       generationEventBottomLineRef.current!.getBoundingClientRect().top +
       window.screenY;
-    // console.log(store.generationEventBottomLineTop);
   }, [topLineRef, mainLineRef]);
+  useEffect(() => {
+    if (generationEventArrowRef.current !== undefined)
+      store.generationEventArrowRefInit(
+        generationEventArrowRef.current!.getBoundingClientRect()
+      );
+  }, [generationEventArrowRef]);
+  useEffect(() => {
+    store.red = red;
+    store.white = white;
+  }, [white, red]);
 
   return (
     <>
-      {/* <div
+      <div
+        id="white"
+        ref={white}
         style={{
-          top: store.bulletButtonTop() + 19,
+          visibility: store.generationEventFormIsVisible ? "visible" : "hidden",
+          top: store.generationEventButtonTop() + 21,
           width: 2,
           height: 2,
-          right: 26,
+          right: store.generationEventArrowLeft + 255,
           position: "absolute",
-          backgroundColor: "rebeccapurple",
+          backgroundColor: "white",
         }}
-      /> */}
+      />
+      <div
+        ref={red}
+        id="red"
+        style={{
+          left: store.arrowLeft + 27,
+          visibility: store.generationEventFormIsVisible ? "visible" : "hidden",
+          top: store.generationEventButtonTop() + 21,
+          width: 2,
+          zIndex: 10,
+          height: 2,
+          // backgroundColor: "red",
+          position: "absolute",
+        }}
+      />
+      <div
+        style={{
+          left: store.arrowLeft + 27,
+          visibility: store.generationEventFormIsVisible ? "visible" : "hidden",
+          top: store.generationEventButtonTop() + 21,
+          width: store.generateWhittt(),
+          zIndex: 10,
+          height: 1.5,
+          backgroundColor: "white",
+          position: "absolute",
+        }}
+      />
+      <div
+        style={{
+          top: store.generationEventButtonTop() + 10.5,
+          visibility: store.generationEventFormIsVisible ? "visible" : "hidden",
+          height: 2,
+          width: 20,
+          left: store.arrowLeft - 5,
+          position: "absolute",
+          backgroundColor: "white",
+        }}
+      ></div>
 
       <Icon
         type="dasdasdds"
@@ -98,6 +191,22 @@ export const Page = observer(() => {
           right: 24.5,
         }}
       />
+
+      <div>
+        <div
+          style={{
+            position: "absolute",
+            left: store.arrowLeft + 13,
+            top: store.generationEventButtonTop() + 8.5,
+            visibility: store.generationEventFormIsVisible
+              ? "visible"
+              : "hidden",
+          }}
+        >
+          <Icon ref={generationEventArrowRef} type="generationEventArrow" />
+        </div>
+      </div>
+
       <div
         style={{
           top: store.aboutButtonTop() + 47 + 20,
@@ -204,8 +313,29 @@ export const Page = observer(() => {
         type={"bulletIn"}
         textStyle={{ position: "relative", top: 30, left: 20 }}
       />
-
-      <Form />
+      {store.bulletFormIsVisible ? (
+        <BulletInForm
+          closeCallback={() => store.clickButton("bulletButtonIsActive")}
+        />
+      ) : (
+        <></>
+      )}
+      {store.generationEventFormIsVisible ? (
+        <GenerationEventForm
+          closeCallback={() => store.clickButton("generationButtonIsActive")}
+          init={(domRect: DOMRect) => store.generationEventFormInit(domRect)}
+        />
+      ) : (
+        <></>
+      )}
+      {store.aboutFormIsVisible ? (
+        <AboutForm
+          closeCallback={() => store.clickButton("generationButtonIsActive")}
+          // init={(domRect: DOMRect) => store.generationEventFormInit(domRect)}
+        />
+      ) : (
+        <></>
+      )}
       <div
         ref={mainLineRef}
         style={{
@@ -213,13 +343,13 @@ export const Page = observer(() => {
           right: 20,
           zIndex: 4,
           top: 108,
-          height: store.mainRefHeight ?? "calc(100% - 100px - 108px)",
- 
+          height: store.mainRefHeight ?? "calc(100% - 108px)",
+
           opacity: 0.4,
           width: 1,
         }}
       />
-      
+
       <div
         style={{
           position: "absolute",
@@ -263,7 +393,7 @@ export const Page = observer(() => {
         }}
       >
         <Logs />
-        
+
         <img
           src={"/bg.jpg"}
           style={{
@@ -281,6 +411,6 @@ export const Page = observer(() => {
 
 root.render(
   <React.StrictMode>
-    <Page />
+    <P />
   </React.StrictMode>
 );

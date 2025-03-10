@@ -17,6 +17,7 @@ export const CoreText: React.FC<{
         onChange(event.target.innerText);
       }
     }}
+    suppressContentEditableWarning={true}
     contentEditable={contentEditable}
     style={Object.assign(
       {

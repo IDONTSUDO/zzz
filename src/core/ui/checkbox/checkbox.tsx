@@ -9,11 +9,15 @@ export const CheckBox: React.FC<{
         visibility: value ? "visible" : "hidden",
       }}
     >
-      <div style={{ position: "relative", top: 4, left: 4 }}>
+      <div
+        style={{ position: "relative", top: 0.3, left: 4.5, cursor: "pointer" }}
+        onClick={() => onClick?.()}
+      >
         <div style={{ width: 8, height: 8, backgroundColor: "#59FE9B" }} />
       </div>
     </div>
     <svg
+      style={{ cursor: "pointer" }}
       onClick={() => onClick?.()}
       width="16"
       height="16"
@@ -30,7 +34,7 @@ export const CheckBox: React.FC<{
         width="14"
         height="14"
         stroke="white"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <defs>
         <filter
@@ -40,9 +44,9 @@ export const CheckBox: React.FC<{
           width="16"
           height="16"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"

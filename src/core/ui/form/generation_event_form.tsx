@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import { CoreText } from "../text/text";
 import { Icon } from "../icon/icon";
 import { CheckBox } from "../checkbox/checkbox";
@@ -6,24 +6,42 @@ import { ButtonGreen } from "../button/button";
 import { Input } from "../input/input";
 import { Select } from "../select/select";
 import { TypedEvent } from "../../helper/event";
+import makeAutoObservable from "mobx-store-inheritance";
+import { observer } from "mobx-react-lite";
 
 class HoverSelectEvent extends TypedEvent<boolean> {}
 
 export const hoverSelectEvent = new HoverSelectEvent();
-
-export const Form = () => {
+class GenerationStore {
+  changeCheckBox(arg0: string) {
+    // @ts-expect-error
+    this[arg0] = !this[arg0];
+  }
+  readAndAgree = true;
+  undestandRisk = false;
+  constructor() {
+    makeAutoObservable(this);
+  }
+}
+export const GenerationEventForm: React.FC<{
+  init: (domRect: DOMRect) => void;
+  closeCallback: () => void;
+}> = observer(({ init, closeCallback }) => {
+  const [store] = useState(new GenerationStore());
   const formWidth = 513;
   const height = 500;
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const ref = useRef<SVGPathElement>(null);
+  const svgRef = useRef<SVGPathElement>(null);
   window.addEventListener("resize", () => {
     setWindowHeight(window.innerHeight);
     setWindowWidth(window.innerWidth);
   });
   const [isHover, setHover] = useState(true);
   hoverSelectEvent.on((event) => setHover(event));
-  useEffect(() => {}, []);
+  useEffect(() => {
+    init(svgRef.current!.getBoundingClientRect());
+  }, []);
   return (
     <>
       <div
@@ -149,7 +167,10 @@ export const Form = () => {
 
               <ButtonGreen text="Connect wallet" />
               <div style={{ display: "flex", alignItems: "center" }}>
-                <CheckBox value={false} />
+                <CheckBox
+                  value={store.readAndAgree}
+                  onClick={() => store.changeCheckBox("readAndAgree")}
+                />
                 <div style={{ width: 5 }} />
                 <CoreText
                   text="I have read and agreed to Terms of Service"
@@ -158,7 +179,10 @@ export const Form = () => {
                 />
               </div>
               <div style={{ display: "flex", alignItems: "center" }}>
-                <CheckBox value={false} />
+                <CheckBox
+                  value={store.undestandRisk}
+                  onClick={() => store.changeCheckBox("undestandRisk")}
+                />
                 <div style={{ width: 5 }} />
                 <CoreText
                   text="I uderstand substational risks of loss"
@@ -200,9 +224,22 @@ export const Form = () => {
             <Icon type="fffffasdas" width={230} style={{ marginLeft: 20 }} />
           </div>
 
-          <Icon ref={ref} type="bigFormBg" height={height} />
+          <Icon ref={svgRef} type="bigFormBg" height={height} />
+          <div
+            onClick={() => closeCallback()}
+            style={{
+              zIndex: 100,
+              position: "relative",
+              bottom: 500,
+              width: 50,
+              height: 50,
+              // backgroundColor: "red",
+              cursor: "pointer",
+              left: 380,
+            }}
+          />
         </div>
       </div>
     </>
   );
-};
+});

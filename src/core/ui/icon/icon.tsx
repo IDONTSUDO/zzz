@@ -20,6 +20,413 @@ const getIcon = (
   ref?: React.RefObject<SVGPathElement | null>,
   iconStyle?: React.CSSProperties
 ) => {
+  if (type === "bulletInForm") {
+    return (
+      <svg
+        width="514"
+        height="282"
+        viewBox="0 0 514 282"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_80_32)">
+          <g filter="url(#filter0_i_80_32)">
+            <path
+              ref={ref}
+              d="M514 0.639648H26.4997L0.701172 26.4382V282H488.184L514 256.201V0.639648Z"
+              fill="white"
+            />
+          </g>
+          <path
+            d="M1.87402 26.9238L26.9857 1.81226H512.827V255.715L487.698 280.827H1.87402V26.9238Z"
+            stroke="white"
+            strokeWidth="2.34532"
+          />
+          <g filter="url(#filter1_i_80_32)">
+            <path d="M16 31L32 15H223V47L207 63H16V31Z" fill="white" />
+          </g>
+          <path
+            d="M17 62V31.4142L32.4142 16H222V46.5858L206.586 62H17Z"
+            stroke="white"
+            strokeWidth="2"
+          />
+          <g opacity="0.4" filter="url(#filter2_d_80_32)">
+            <path
+              d="M473 41.7056L483.057 31.6489L473 21.5923L474.592 20L484.649 30.0566L494.706 20L496.382 21.6761L486.325 31.7327L496.382 41.7894L494.789 43.3817L484.733 33.325L474.676 43.3817L473 41.7056Z"
+              fill="black"
+            />
+          </g>
+          <g filter="url(#filter3_d_80_32)">
+            <path
+              d="M30.4888 50.9999V27.948H39.4369C44.5925 27.948 46.4888 29.4295 46.4888 33.8443C46.4888 36.9258 45.5703 38.3184 43.348 38.9406V39.0295C46.0147 39.5925 47.0814 41.1629 47.0814 44.6295C47.0814 49.3999 45.0666 50.9999 39.4666 50.9999H30.4888ZM33.6295 48.1851H39.4666C42.8147 48.1851 43.9406 47.4147 43.9406 44.3332C43.9406 41.3406 42.874 40.511 39.8221 40.511H33.6295V48.1851ZM33.6295 37.6666H39.674C42.4295 37.6666 43.4073 36.8666 43.4073 34.1406C43.4073 31.474 42.4592 30.7629 39.4369 30.7629H33.6295V37.6666ZM59.1203 51.3258C52.661 51.3258 51.0314 48.9258 51.0314 43.7406V27.948H54.2018V43.2666C54.2018 47.0592 54.824 48.511 59.1203 48.511C63.4166 48.511 64.0684 47.0592 64.0684 43.2666V27.948H67.2388V43.7406C67.2388 48.9258 65.5795 51.3258 59.1203 51.3258ZM72.5518 50.9999V27.948H75.6925V48.1851H88.048V50.9999H72.5518ZM93.3018 50.9999V27.948H96.4425V48.1851H108.798V50.9999H93.3018ZM113.785 50.9999V27.948H129.341V30.7629H116.956V37.7258H128.63V40.5406H116.956V48.1851H129.459V50.9999H113.785ZM140.52 50.9999V30.7629H133.113V27.948H151.098V30.7629H143.691V50.9999H140.52ZM154.633 50.9999V48.1851H161.27V30.7629H154.633V27.948H171.078V30.7629H164.441V48.1851H171.078V50.9999H154.633ZM175.561 50.9999V27.948H179.828L188.865 47.2962H188.924L188.776 41.1036V27.948H191.709V50.9999H187.531L178.406 31.5629H178.346L178.494 37.8443V50.9999H175.561Z"
+              fill="black"
+            />
+          </g>
+        </g>
+        <defs>
+          <filter
+            id="filter0_i_80_32"
+            x="0.701172"
+            y="0.639648"
+            width="513.299"
+            height="281.36"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="5.57014" />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="shape"
+              result="effect1_innerShadow_80_32"
+            />
+          </filter>
+          <filter
+            id="filter1_i_80_32"
+            x="16"
+            y="15"
+            width="207"
+            height="48"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="4.75" />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="shape"
+              result="effect1_innerShadow_80_32"
+            />
+          </filter>
+          <filter
+            id="filter2_d_80_32"
+            x="469"
+            y="16"
+            width="31.3818"
+            height="31.3816"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_80_32"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_80_32"
+              result="shape"
+            />
+          </filter>
+          <filter
+            id="filter3_d_80_32"
+            x="26.4888"
+            y="23.948"
+            width="169.22"
+            height="31.3777"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_80_32"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_80_32"
+              result="shape"
+            />
+          </filter>
+          <clipPath id="clip0_80_32">
+            <rect width="514" height="282" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    );
+  }
+  if (type === "aboutForm") {
+    return (
+      <svg
+        width={width ?? "775"}
+        height={height ?? "723"}
+        viewBox="0 0 775 723"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0.5 348.78L5.5 353.363V34.0675L0.5 38.2342V348.78Z"
+          fill="white"
+          stroke="white"
+        />
+        <line
+          x1="6"
+          y1="27"
+          x2="6.00003"
+          y2="723"
+          stroke="white"
+          strokeWidth="2"
+        />
+        <g filter="url(#filter0_i_0_1)">
+          <path
+            ref={ref}
+            d="M774.5 0.639648L39.2986 0.639648L13.5 26.4382V722.999H748.684L774.5 697.201V0.639648Z"
+            fill="white"
+          />
+        </g>
+        <path
+          d="M14.6727 26.9239L39.7843 1.81231H773.327V696.715L748.199 721.827H14.6727V26.9239Z"
+          stroke="white"
+          strokeWidth="2.34532"
+        />
+        <g filter="url(#filter1_i_0_1)">
+          <path d="M29 31L45 15L171 15V47L155 63H29V31Z" fill="white" />
+        </g>
+        <path
+          d="M30 62V31.4142L45.4142 16H170V46.5858L154.586 62H30Z"
+          stroke="white"
+          strokeWidth="2"
+        />
+        <g opacity="0.4" filter="url(#filter2_d_0_1)">
+          <path
+            d="M733 41.7056L743.057 31.6489L733 21.5923L734.592 20L744.649 30.0566L754.706 20L756.382 21.6761L746.325 31.7327L756.382 41.7894L754.789 43.3817L744.733 33.325L734.676 43.3817L733 41.7056Z"
+            fill="black"
+          />
+        </g>
+        <g filter="url(#filter3_d_0_1)">
+          <path
+            d="M41.8 51L49.2074 27.9481H53.563L60.9704 51H57.6519L56.0519 45.7852H46.6593L45.0593 51H41.8ZM47.5185 42.9704H55.1926L51.3704 30.5852H51.3111L47.5185 42.9704ZM64.2389 51V27.9481H73.187C78.3426 27.9481 80.2389 29.4296 80.2389 33.8444C80.2389 36.9259 79.3204 38.3185 77.0981 38.9407V39.0296C79.7648 39.5926 80.8315 41.163 80.8315 44.6296C80.8315 49.4 78.8167 51 73.2167 51H64.2389ZM67.3796 48.1852H73.2167C76.5648 48.1852 77.6907 47.4148 77.6907 44.3333C77.6907 41.3407 76.6241 40.5111 73.5722 40.5111H67.3796V48.1852ZM67.3796 37.6667H73.4241C76.1796 37.6667 77.1574 36.8667 77.1574 34.1407C77.1574 31.4741 76.2093 30.763 73.187 30.763H67.3796V37.6667ZM92.8704 51.4444C85.5815 51.4444 84.2185 48.7778 84.2185 39.4741C84.2185 30.1704 85.5815 27.5037 92.8704 27.5037C100.13 27.5037 101.493 30.1704 101.493 39.4741C101.493 48.7778 100.13 51.4444 92.8704 51.4444ZM87.3593 39.4741C87.3593 47.3259 87.9815 48.6296 92.8704 48.6296C97.7296 48.6296 98.3519 47.3259 98.3519 39.4741C98.3519 31.6222 97.7296 30.3185 92.8704 30.3185C87.9815 30.3185 87.3593 31.6222 87.3593 39.4741ZM113.62 51.3259C107.161 51.3259 105.531 48.9259 105.531 43.7407V27.9481H108.702V43.2667C108.702 47.0593 109.324 48.5111 113.62 48.5111C117.917 48.5111 118.569 47.0593 118.569 43.2667V27.9481H121.739V43.7407C121.739 48.9259 120.08 51.3259 113.62 51.3259ZM132.77 51V30.763H125.363V27.9481H143.348V30.763H135.941V51H132.77Z"
+            fill="black"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_i_0_1"
+            x="13.5"
+            y="0.639648"
+            width="761"
+            height="722.36"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="5.57014" />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="shape"
+              result="effect1_innerShadow_0_1"
+            />
+          </filter>
+          <filter
+            id="filter1_i_0_1"
+            x="29"
+            y="15"
+            width="142"
+            height="48"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="4.75" />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="shape"
+              result="effect1_innerShadow_0_1"
+            />
+          </filter>
+          <filter
+            id="filter2_d_0_1"
+            x="729"
+            y="16"
+            width="31.3816"
+            height="31.3816"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_0_1"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_0_1"
+              result="shape"
+            />
+          </filter>
+          <filter
+            id="filter3_d_0_1"
+            x="37.7998"
+            y="23.5037"
+            width="109.548"
+            height="31.9407"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_0_1"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_0_1"
+              result="shape"
+            />
+          </filter>
+        </defs>
+      </svg>
+    );
+  }
+  if (type === "generationEventArrow") {
+    return (
+      <svg
+        width={width}
+        height="12"
+        viewBox="0 0 22 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          ref={ref}
+          d="M14.8147 11L14.1208 11.7201L14.4113 12H14.8147V11ZM4.4377 1L5.1316 0.279934L4.84112 0H4.4377V1ZM14.8147 12L21.5 12V10L14.8147 10V12ZM15.5086 10.2799L5.1316 0.279934L3.74379 1.72007L14.1208 11.7201L15.5086 10.2799ZM4.4377 0L0.5 0L0.5 2L4.4377 2V0Z"
+          fill="white"
+        />
+      </svg>
+    );
+  }
   if (type === "selectItemBg") {
     return (
       <svg
@@ -54,8 +461,8 @@ const getIcon = (
           fill="black"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M4.54803 12.321C7.76309 13.1226 11.019 11.1662 11.8205 7.95154L11.8204 7.9516C12.6219 4.73677 10.6656 1.48026 7.45081 0.678828C4.23674 -0.122605 0.980793 1.83393 0.179711 5.04897C-0.622074 8.26338 1.33432 11.5195 4.54803 12.321ZM6.76002 4.8777V5.79209C8.45812 5.87061 9.73403 6.20721 9.73403 6.61062C9.73403 7.01406 8.45688 7.35068 6.75967 7.42882V10.3611H5.24703V7.42988C3.54593 7.35138 2.26666 7.01477 2.26666 6.61097C2.26666 6.20718 3.54593 5.87021 5.24703 5.79207V4.8777H3.15416V3.48281H8.85325V4.8777H6.76002Z"
           fill="black"
         />
@@ -72,8 +479,8 @@ const getIcon = (
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M12 6.5C12 9.82502 9.32502 12.5 6 12.5C2.67498 12.5 0 9.82502 0 6.5C0 3.17498 2.67498 0.5 6 0.5C9.32502 0.5 12 3.17498 12 6.5ZM2.50002 5.27496C1.77498 7.2 2.775 9.375 4.725 10.075C4.8 10.125 4.875 10.225 4.875 10.3V10.65C4.875 10.7 4.875 10.725 4.84998 10.75C4.82502 10.85 4.725 10.9 4.62498 10.85C3.225 10.4 2.14998 9.32496 1.69998 7.92498C0.949979 5.55 2.25 3.02496 4.62498 2.27496C4.65 2.25 4.69998 2.25 4.725 2.25C4.82502 2.27496 4.875 2.34996 4.875 2.44998V2.79996C4.875 2.925 4.82502 3 4.725 3.04998C3.70002 3.42498 2.87502 4.22496 2.50002 5.27496ZM7.15002 2.37498C7.17498 2.27496 7.275 2.22498 7.37502 2.27496C8.74998 2.72496 9.85002 3.79998 10.3 5.22498C11.05 7.59996 9.75 10.125 7.37502 10.875C7.35 10.9 7.30002 10.9 7.275 10.9C7.17498 10.875 7.125 10.8 7.125 10.7V10.35C7.125 10.225 7.17498 10.15 7.275 10.1C8.29998 9.72498 9.12498 8.925 9.49998 7.875C10.225 5.94996 9.225 3.77496 7.275 3.075C7.2 3.02496 7.125 2.925 7.125 2.82498V2.475C7.125 2.42496 7.125 2.4 7.15002 2.37498ZM7.64998 7.45C7.64998 6.57502 7.12498 6.27502 6.07498 6.15004C5.32498 6.05002 5.17498 5.85004 5.17498 5.5C5.17498 5.14996 5.425 4.92502 5.92498 4.92502C6.37498 4.92502 6.625 5.07502 6.74998 5.45002C6.775 5.52502 6.85 5.575 6.925 5.575H7.32496C7.42498 5.575 7.49998 5.5 7.49998 5.40004V5.37502C7.39996 4.825 6.94996 4.40002 6.37498 4.35004V3.75004C6.37498 3.65002 6.29998 3.57502 6.175 3.55H5.8C5.69998 3.55 5.62498 3.625 5.59996 3.75004V4.32502C4.84996 4.42504 4.375 4.92502 4.375 5.55004C4.375 6.37504 4.87498 6.7 5.92498 6.82504C6.625 6.95002 6.85 7.10002 6.85 7.50004C6.85 7.90006 6.49996 8.17504 6.025 8.17504C5.37496 8.17504 5.14996 7.9 5.07496 7.525C5.05 7.42504 4.975 7.375 4.9 7.375H4.47496C4.375 7.375 4.3 7.45 4.3 7.55002V7.57504C4.39996 8.2 4.79998 8.65 5.62498 8.77504V9.37504C5.62498 9.475 5.69998 9.55 5.82496 9.57502H6.19996C6.29998 9.57502 6.37498 9.50002 6.4 9.37504V8.77504C7.15 8.65 7.64998 8.125 7.64998 7.45Z"
           fill="black"
         />
@@ -147,9 +554,9 @@ const getIcon = (
             width="20"
             height="18"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -202,9 +609,9 @@ const getIcon = (
             width="20.7279"
             height="14.364"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -257,9 +664,9 @@ const getIcon = (
             width="108"
             height="48"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -316,9 +723,9 @@ const getIcon = (
             width="109.004"
             height="159"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -377,7 +784,7 @@ const getIcon = (
         <path
           d="M1 16.4207L16.7626 1H483V31.5793L467.237 47H1V16.4207Z"
           stroke="white"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <defs>
           <filter
@@ -387,9 +794,9 @@ const getIcon = (
             width="484"
             height="48"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -433,7 +840,7 @@ const getIcon = (
             <path
               d="M355 10.6668L344.356 0.000160217L0.000183105 0.000225067V37.3336L10.6445 48.0002L355 48.0002V10.6668Z"
               fill="black"
-              fill-opacity="0.3"
+              fillOpacity="0.3"
             />
           </g>
           <path
@@ -449,9 +856,9 @@ const getIcon = (
             width="355"
             height="48.0001"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -515,7 +922,7 @@ const getIcon = (
         <path
           d="M1 47.0001V16.4208L16.7626 1.00012H483V31.5795L467.237 47.0001H1Z"
           stroke="white"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <g filter="url(#filter1_d_0_539)">
           <path
@@ -531,9 +938,9 @@ const getIcon = (
             width="484"
             height="48"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -566,9 +973,9 @@ const getIcon = (
             width="223.29"
             height="25.9556"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -627,9 +1034,9 @@ const getIcon = (
             width="108"
             height="48"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -662,9 +1069,9 @@ const getIcon = (
             width="67.5764"
             height="29.5111"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -743,9 +1150,9 @@ const getIcon = (
             width="108"
             height="48"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -778,9 +1185,9 @@ const getIcon = (
             width="20"
             height="18"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -813,9 +1220,9 @@ const getIcon = (
             width="51.614"
             height="25.9556"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -848,9 +1255,9 @@ const getIcon = (
             width="20.728"
             height="14.364"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -894,7 +1301,7 @@ const getIcon = (
             <path
               d="M355 10.6668L344.355 0.00012207L-6.10352e-05 0.00018692V37.3335L10.6442 48.0002L355 48.0001V10.6668Z"
               fill="black"
-              fill-opacity="0.3"
+              fillOpacity="0.3"
             />
           </g>
           <path
@@ -916,9 +1323,9 @@ const getIcon = (
             width="355"
             height="48.0001"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -951,9 +1358,9 @@ const getIcon = (
             width="114.375"
             height="25.9556"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -998,7 +1405,7 @@ const getIcon = (
         <path
           d="M1 47V16.4142L16.4142 1H375V31.5858L359.586 47H1Z"
           stroke="white"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <defs>
           <filter
@@ -1008,9 +1415,9 @@ const getIcon = (
             width="376"
             height="48"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -1063,9 +1470,9 @@ const getIcon = (
             width="31.3816"
             height="31.3817"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -1114,7 +1521,7 @@ const getIcon = (
         <path
           d="M1.17266 26.272L26.309 1.17266H511.827V695.728L486.674 720.827H1.17266V26.272Z"
           stroke="white"
-          stroke-width="2.34532"
+          strokeWidth="2.34532"
         />
         <defs>
           <filter
@@ -1124,9 +1531,9 @@ const getIcon = (
             width="513"
             height="722"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -1174,7 +1581,7 @@ const getIcon = (
         <path
           d="M1 16V6.08832L6.21885 1H482.812V10.9117L477.593 16H1Z"
           stroke="white"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <g filter="url(#filter1_i_0_498)">
           <path
@@ -1185,7 +1592,7 @@ const getIcon = (
         <path
           d="M1 16V6.08832L6.21885 1H341V10.9117L335.781 16H1Z"
           stroke="white"
-          stroke-width="2"
+          strokeWidth="2"
         />
         <defs>
           <filter
@@ -1195,9 +1602,9 @@ const getIcon = (
             width="483.812"
             height="17"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -1230,9 +1637,9 @@ const getIcon = (
             width="342"
             height="17"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -1280,7 +1687,7 @@ const getIcon = (
         <path
           d="M1.17266 26.2843L26.2843 1.17266H511.327V696.075L486.199 721.187H1.17266V26.2843Z"
           stroke="white"
-          stroke-width="2.34532"
+          strokeWidth="2.34532"
         />
         <defs>
           <filter
@@ -1290,9 +1697,9 @@ const getIcon = (
             width="512.5"
             height="722.36"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"

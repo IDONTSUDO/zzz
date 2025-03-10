@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "../icon/icon";
-import { hoverSelectEvent } from "../form/form";
+import { hoverSelectEvent } from "../form/generation_event_form";
 import { CoreText } from "../text/text";
+import { Hover } from "../hover/hover";
 
 export interface Item {
   icon: string;
@@ -34,11 +35,12 @@ const items: Item[] = [
   },
 ];
 export const Select: React.FC<{}> = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [value, setValue] = useState<Item>({
     text: "SOL",
     icon: "sol",
   });
+  const [hoverItem, setHoverItem] = useState("");
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     ref.current?.addEventListener("mouseover", () => {
@@ -50,6 +52,12 @@ export const Select: React.FC<{}> = () => {
       hoverSelectEvent.emit(false);
     });
   }, []);
+  const setSelect = (text: string) => {
+    const index = items.findIndex((el) => el.text === text);
+
+    setValue(items[index]);
+    setOpen(false);
+  };
   return (
     <div ref={ref} style={{ cursor: "pointer", zIndex: 10 }}>
       <div style={{ position: "absolute" }}>
@@ -73,13 +81,14 @@ export const Select: React.FC<{}> = () => {
             display: "flex",
             justifyItems: "center",
           }}
+          onClick={() => setOpen(true)}
         >
-          <Icon type={value.icon} />
+          <Icon type={value.icon} style={{ position: "relative", left: 4 }} />
           <CoreText
             text={value.text}
             color="black"
             fontSize={9}
-            style={{ position: "relative", top: 5 }}
+            style={{ position: "relative", top: 5, left: 4 }}
           />
         </div>
       </div>
@@ -92,33 +101,55 @@ export const Select: React.FC<{}> = () => {
             visibility: open ? undefined : "hidden",
           }}
         >
-          {items
-            .filter((el) => el.text !== value.text)
-            .map((el) => (
-              <div style={{ display: "flex", height: 24 }}>
-                {el.text === "JUP" ? (
-                  <>
-                    <div style={{ position: "absolute" }}>
-                      <div style={{ position: "relative", top: -12, left: 3 }}>
-                        <Icon type="selectItemBg" width={66} />
-                      </div>
+          {items.map((el, key) => (
+            <div key={key} style={{ display: "flex", height: 24 }}>
+              {el.text === hoverItem ? (
+                <>
+                  <div style={{ position: "absolute" }}>
+                    <div style={{ position: "relative", top: -12, left: 2 }}>
+                      <Icon type="selectItemBg" width={67} />
                     </div>
+                  </div>
+                </>
+              ) : (
+                <></>
+              )}
+              <Hover
+                onClick={() => setSelect(el.text)}
+                id={el.text}
+                style={{ display: "flex" }}
+                onHover={function (status: boolean, id?: string): void {
+                  if (status === false) {
+                    setHoverItem("");
+                  }
+                  if (id !== undefined) {
+                    setHoverItem(id);
+                  }
+                }}
+                children={
+                  <>
+                    {el.l}
+                    <Icon
+                      type={el.icon}
+                      style={{
+                        zIndex: 100,
+                        position: "relative",
+                        left: 4,
+                        top: 2,
+                      }}
+                    />
+                    {el.s}
+                    <CoreText
+                      text={el.text}
+                      color="black"
+                      fontSize={9}
+                      style={{ position: "relative", top: 5, left: 3 }}
+                    />
                   </>
-                ) : (
-                  <></>
-                )}
-
-                {el.l}
-                <Icon type={el.icon} style={{ zIndex: 100 }} />
-                {el.s}
-                <CoreText
-                  text={el.text}
-                  color="black"
-                  fontSize={9}
-                  style={{ position: "relative", top: 5 }}
-                />
-              </div>
-            ))}
+                }
+              />
+            </div>
+          ))}
         </div>
       </div>
       <div style={{ position: "absolute" }}>
